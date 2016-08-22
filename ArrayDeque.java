@@ -1,10 +1,10 @@
 
 public class ArrayDeque<E> implements Deque<E> {
 	
-	private E[] array;
-	private int maxSize;
-	private int header;
-	private int size;
+	protected E[] array;
+	protected int maxSize;
+	protected int header;
+	protected int size;
 	
 	@SuppressWarnings("unchecked")
 	public ArrayDeque(int size) {
