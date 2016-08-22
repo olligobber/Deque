@@ -1,16 +1,20 @@
 
 public class ExpandingArrayDeque<E> extends ArrayDeque<E> {
 	
+	private boolean expanding;
+	
 	public ExpandingArrayDeque() {
 		super(1024);
+		expanding = true;
 	}
 	
 	public ExpandingArrayDeque(int i) {
 		super(i);
+		expanding = false;
 	}
 
 	private void checkSize() {
-		if (size == maxSize) {
+		if (size == maxSize && expanding) {
 			maxSize *= 2;
 			@SuppressWarnings("unchecked")
 			E[] newArray = (E[]) new Object[maxSize];
